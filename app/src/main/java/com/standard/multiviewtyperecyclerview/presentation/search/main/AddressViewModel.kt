@@ -9,28 +9,28 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import com.standard.multiviewtyperecyclerview.data.database.DataSource
 import com.standard.multiviewtyperecyclerview.data.remote.repository.SearchRepositoryImpl
 import com.standard.multiviewtyperecyclerview.network.RetrofitClient
-import com.standard.multiviewtyperecyclerview.presentation.search.model.GitHubUserEntity
+import com.standard.multiviewtyperecyclerview.presentation.search.model.AddressEntity
 import com.standard.multiviewtyperecyclerview.presentation.search.repository.SearchRepository
 import kotlinx.coroutines.launch
 
-class GitHubUserViewModel(private val searchRepository: SearchRepository) : ViewModel() {
+class AddressViewModel(private val searchRepository: SearchRepository) : ViewModel() {
 
-    private val _getGitHubUserList: MutableLiveData<List<GitHubUserEntity>> = MutableLiveData()
-    val getGitHubUserList: LiveData<List<GitHubUserEntity>> get() = _getGitHubUserList
+    private val _getAddressList: MutableLiveData<List<AddressEntity>> = MutableLiveData()
+    val getAddressList: LiveData<List<AddressEntity>> get() = _getAddressList
 
-    fun getGitHubUserList() = viewModelScope.launch {
-        _getGitHubUserList.value = searchRepository.getGitHubUserList("cindy").items
+    fun getAddressList() = viewModelScope.launch {
+        _getAddressList.value = searchRepository.getAddressList("삼성동").address
     }
 }
 
-class GitHubUserViewModelFactory : ViewModelProvider.Factory {
-    private val repository = SearchRepositoryImpl(DataSource, RetrofitClient.searchGitHubUser)
+class AddressViewModelFactory : ViewModelProvider.Factory {
+    private val repository = SearchRepositoryImpl(DataSource, RetrofitClient.searchAddress)
     override fun <T : ViewModel> create(
         modelClass: Class<T>,
         extras: CreationExtras
     ): T {
 
-        return GitHubUserViewModel(
+        return AddressViewModel(
             repository
         ) as T
     }

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MultiViewTypeRecyclerView"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.search.main.GitHubUserActivity"
+            android:name=".presentation.search.main.AddressActivity"
             android:exported="true"
             android:theme="@style/Theme.MultiViewTypeRecyclerView">
             <intent-filter>

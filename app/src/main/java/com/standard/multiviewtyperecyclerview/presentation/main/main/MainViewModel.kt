@@ -11,7 +11,7 @@ import com.standard.multiviewtyperecyclerview.data.remote.repository.SearchRepos
 import com.standard.multiviewtyperecyclerview.network.RetrofitClient
 import com.standard.multiviewtyperecyclerview.presentation.main.model.BlueCardModel
 import com.standard.multiviewtyperecyclerview.presentation.search.repository.SearchRepository
-import com.standard.multiviewtyperecyclerview.presentation.search.model.GitHubUserEntity
+import com.standard.multiviewtyperecyclerview.presentation.search.model.AddressEntity
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val searchRepository: SearchRepository) : ViewModel() {
@@ -30,7 +30,7 @@ class MainViewModel(private val searchRepository: SearchRepository) : ViewModel(
 }
 
 class MainViewModelFactory : ViewModelProvider.Factory {
-    private val repository = SearchRepositoryImpl(DataSource, RetrofitClient.searchGitHubUser)
+    private val repository = SearchRepositoryImpl(DataSource, RetrofitClient.searchAddress)
     override fun <T : ViewModel> create(
         modelClass: Class<T>,
         extras: CreationExtras

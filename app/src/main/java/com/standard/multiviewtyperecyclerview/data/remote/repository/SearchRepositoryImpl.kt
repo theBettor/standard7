@@ -17,6 +17,6 @@ class SearchRepositoryImpl(
 ) : SearchRepository {
     override fun getCardList() = dataSource.getCardList().asBlueCardModel()
 
-    override suspend fun getGitHubUserList(userName: String) =
-        remoteDataSource.getGitHubUser(userName).toEntity()
+    override suspend fun getAddressList(userName: String) =
+        remoteDataSource.getAddress(userName).toEntity()
 }
