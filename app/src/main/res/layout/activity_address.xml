@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_search"
-        tools:listitem="@layout/item_github_user"/>
+        tools:listitem="@layout/item_address"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
