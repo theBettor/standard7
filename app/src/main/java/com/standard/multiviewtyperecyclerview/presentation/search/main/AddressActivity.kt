@@ -63,7 +63,12 @@ class AddressActivity : AppCompatActivity() {
 //
 //            initView()
 //        }
+//        gitHubUserViewModel.getGitHubUserList.observe(this@GitHubUserActivity){ gitHubUserList ->
+//            Log.d("debug100", gitHubUserList.toString())
+//            //TODO 1. check observe data 2. RecyclerView Setting
+//        }
         addressViewModel.getAddressList.observe(this@AddressActivity) { addressEntities ->
+            Log.d("debug100", addressList.toString())
             addressList = addressEntities.map { entity ->
                 AddressModel(
                     addressName = "삼성동"
